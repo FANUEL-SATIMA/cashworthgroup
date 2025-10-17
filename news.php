@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
-    <link rel="icon" type="image/svg+xml" href="assets/img/logo-mark.svg">
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.css?v=<?php echo time(); ?>">
@@ -14,7 +14,7 @@
     <?php include __DIR__ . '/includes/header.php'; ?>
 
     <main>
-        <section class="hero">
+        <section class="hero hero--bg hero--news">
             <div class="container hero__content">
                 <h1 class="hero__title reveal">News & Insights</h1>
                 <p class="hero__subtitle reveal delay-2">Updates across our portfolio and markets.</p>

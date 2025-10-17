@@ -70,3 +70,60 @@ if (yearEl) {
 	elements.forEach((el) => observer.observe(el));
 })();
 
+// Rotating hero backgrounds on home page
+(() => {
+    const hero = document.querySelector('.hero.hero--bg');
+    // Only rotate on pages that start with hero--home
+    if (!hero || !hero.classList.contains('hero--home')) return;
+
+    const classes = ['hero--home', 'hero--divisions', 'hero--about'];
+    let idx = 0;
+
+    function setHero(i) {
+        classes.forEach(c => hero.classList.remove(c));
+        hero.classList.add(classes[i]);
+    }
+
+    setHero(idx);
+    setInterval(() => {
+        idx = (idx + 1) % classes.length;
+        setHero(idx);
+    }, 6000); // switch every 6s
+})();
+
+// Increment counters on About page
+(() => {
+    const counters = document.querySelectorAll('[data-counter]');
+    if (counters.length === 0) return;
+
+    const animate = (el) => {
+        const target = Number(el.getAttribute('data-target') || '0');
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1200; // ms
+        const start = performance.now();
+
+        const step = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const value = Math.floor(progress * target);
+            el.textContent = value.toString() + (progress === 1 ? suffix : '');
+            if (progress < 1) requestAnimationFrame(step);
+        };
+
+        requestAnimationFrame(step);
+    };
+
+    const startWhenVisible = (el) => {
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animate(el);
+                    obs.disconnect();
+                }
+            });
+        }, { threshold: 0.3 });
+        obs.observe(el);
+    };
+
+    counters.forEach(startWhenVisible);
+})();
+

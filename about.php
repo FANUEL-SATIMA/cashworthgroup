@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="icon" type="image/svg+xml" href="assets/img/logo-mark.svg">
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
     <meta name="description" content="Cash Worth Group is an investment holding company with subsidiaries and investments spanning consultancy, financial & tax services, property management, trading, and more.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -15,7 +15,7 @@
     <?php include __DIR__ . '/includes/header.php'; ?>
 
     <main>
-        <section class="hero">
+        <section class="hero hero--bg hero--about">
             <div class="container hero__content">
                 <h1 class="hero__title reveal">About Cash Worth Group</h1>
                 <p class="hero__subtitle reveal delay-2">An investment holding company with a portfolio of subsidiary companies and investments across key sectors.</p>
@@ -36,11 +36,11 @@
                     </div>
                     <div class="card stats">
                         <div class="stats__item">
-                            <span class="stats__num">1+</span>
+                            <span class="stats__num" data-counter data-target="1" data-suffix="+">0</span>
                             <span class="stats__label">Countries</span>
                         </div>
                         <div class="stats__item">
-                            <span class="stats__num">10+</span>
+                            <span class="stats__num" data-counter data-target="10" data-suffix="+">0</span>
                             <span class="stats__label">Sectors</span>
                         </div>
                         <div class="stats__item">
